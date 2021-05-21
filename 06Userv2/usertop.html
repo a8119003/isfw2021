@@ -10,13 +10,32 @@
     <script type="text/javascript" src="../osql.js"></script>
 
     <script>
+        $().ready(function () {
+            init();
+        });
+
+        function init() {
+            var username = sessionStorage.getItem('username');
+            document.getElementById('welcome').innerHTML = 'ようこそ' + username + 'さん';
+        }
+
+        function button2Pressed() {
+            var userid = sessionStorage.getItem('userid');
+            console.log(userid);
+            var html = "";
+            html = "update.html?userid=" + userid;
+            //location.href = html;
+        }
     </script>
 
 </head>
 
 <body>
     <h1>ユーザトップ</h1>
-    <p id="welcome">ようこそxxさん</p>
+    <p id="welcome"></p>
+    <br>
+    ユーザー情報変更
+    <button onclick="button2Pressed()">×</button>
     <hr>
 
 </body>
