@@ -10,6 +10,11 @@
     <script type="text/javascript" src="../osql.js"></script>
 
     <script>
+         $().ready(function () {// $().ready(functionは画像などを除いて、HTML=DOMの読み込みが終わったらfunction()の中の処理(=なにかしらの処理)を実行するという意味です。
+                var userid = osql.getParam('userid')
+                document.getElementById("tf1").value = userid;
+                doSelect();
+            });
         function button1Pressed() {
             doInsert();
             tf2.value = "";
@@ -24,6 +29,11 @@
 
             document.getElementById('result').innerHTML = "tweetしました";
         }
+
+            var user = objects[0];
+            document.getElementById('tf1').value = user.id;
+            document.getElementById('tf2').value = user.password;
+            document.getElementById('tf3').value = user.name;
         function button2Pressed() {
             doSelect();
         }

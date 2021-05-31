@@ -26,6 +26,16 @@
             html = "update.html?userid=" + userid;
             location.href = html;
         }
+
+        function button3Pressed(){
+            var userid = sessionStorage.getItem('userid');
+            console.log(userid);
+            var html = "";
+            html = "tweet.html?userid=" + userid;
+            location.href = html;
+        }
+        
+        
     </script>
 
 </head>
@@ -36,6 +46,9 @@
     <br>
     ユーザー情報変更
     <button onclick="button2Pressed()">×</button>
+    <br>
+    ツイートする
+    <button onclick = "button3Pressed()">x</button>
     <hr>
 
 </body>
